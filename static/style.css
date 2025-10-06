@@ -1,0 +1,902 @@
+/* style.css - Adjusted body background: Semi-transparent gradients for better image visibility, ensured full rule integration */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: 
+        linear-gradient(135deg, rgba(245, 245, 245, 0.8) 0%, rgba(224, 224, 224, 0.6) 50%, rgba(208, 208, 208, 0.4) 100%),
+        url('/static/arc_reactor_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+body.dark-theme {
+    background: 
+        linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(15, 15, 15, 0.7) 50%, rgba(0, 0, 0, 0.6) 100%),
+        url('/static/arc_reactor_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #e0e0e0;
+}
+
+/* Rest of your existing CSS rules go here (upload-area, method-buttons, etc.) - unchanged for now */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 400;
+    z-index: 1000;
+}
+
+body.dark-theme .theme-toggle {
+    background: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+body.dark-theme header {
+    border-color: #555;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+body.dark-theme h1 {
+    color: #e0e0e0;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+    font-weight: 300;
+}
+
+body.dark-theme .subtitle {
+    color: #aaa;
+}
+
+.main-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+body.dark-theme .main-card {
+    background: #2a2a2a;
+    border-color: #555;
+    color: #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.upload-section {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 40px;
+}
+
+body.dark-theme .upload-section {
+    border-color: #555;
+}
+
+.upload-area {
+    border: 2px dashed rgba(0, 0, 0, 0.1); /* Subtle dashed like reference overlay */
+    border-radius: 12px; /* Rounded like cr-viewport */
+    padding: 60px 30px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white like reference buttons */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow like croppie-result */
+    transition: box-shadow 0.2s ease, border-color 0.2s ease; /* Smooth like reference hovers */
+}
+
+body.dark-theme .upload-area {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(42, 42, 42, 0.9); /* Dark semi-transparent */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.upload-area:hover {
+    border-color: rgba(0, 0, 0, 0.2); /* Darker on hover like reference thumb */
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+body.dark-theme .upload-area:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.upload-area.dragover {
+    background: rgba(255, 255, 255, 0.95); /* Lighter on drag like reference active */
+    border-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .upload-area.dragover {
+    background: rgba(42, 42, 42, 0.95);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+.upload-icon {
+    font-size: 4em;
+    color: #999;
+    margin-bottom: 20px;
+    display: block;
+    opacity: 0.8; /* Subtle like reference icons */
+    transition: opacity 0.2s ease;
+}
+
+body.dark-theme .upload-icon {
+    color: #777;
+}
+
+.upload-area:hover .upload-icon {
+    opacity: 1; /* Full on hover */
+}
+
+.upload-text {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+body.dark-theme .upload-text {
+    color: #e0e0e0;
+}
+
+.upload-subtext {
+    color: #999;
+    font-size: 1em;
+}
+
+body.dark-theme .upload-subtext {
+    color: #777;
+}
+
+#fileInput {
+    display: none;
+}
+
+/* Rest of CSS unchanged */
+.preview-section {
+    display: none;
+    margin: 40px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+body.dark-theme .preview-section {
+    border-color: #555;
+}
+
+.preview-container {
+    text-align: center;
+}
+
+.nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+}
+
+body.dark-theme .preview-image {
+    border-color: #555;
+}
+
+.nav-btn {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 1.2em;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark-theme .nav-btn {
+    background: #333;
+    border-color: #555;
+    color: #aaa;
+}
+
+.nav-btn:hover {
+    background: #e0e0e0;
+}
+
+body.dark-theme .nav-btn:hover {
+    background: #444;
+}
+
+.counter-text {
+    color: #999;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+body.dark-theme .counter-text {
+    color: #777;
+}
+
+.method-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.method-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s ease;
+}
+
+body.dark-theme .method-btn {
+    background: #2a2a2a;
+    border-color: #555;
+}
+
+.method-btn:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+body.dark-theme .method-btn:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.card-header {
+    background: #28a745;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.rswhe-card .card-header {
+    background: #007bff;
+}
+
+.aspohe-card .card-header {
+    background: #fd7e14;
+}
+
+.card-header i {
+    font-size: 1.5em;
+}
+
+.header-text {
+    font-weight: 700;
+}
+
+.btn-content {
+    padding: 24px;
+    text-align: left;
+}
+
+.btn-content h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+body.dark-theme .btn-content h3 {
+    color: #e0e0e0;
+}
+
+.btn-content p {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+body.dark-theme .btn-content p {
+    color: #aaa;
+}
+
+.features {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #f8f9fa;
+    color: #666;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+body.dark-theme .feature {
+    background: #444;
+    color: #aaa;
+}
+
+.loader {
+    display: none;
+    text-align: center;
+    padding: 50px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border-color: #ddd;
+    color: #666;
+    margin: 0 auto 20px;
+}
+
+body.dark-theme .spinner {
+    border-color: #555;
+    color: #777;
+}
+
+.loader-text {
+    font-size: 1.2em;
+    color: #666;
+    font-weight: 400;
+}
+
+body.dark-theme .loader-text {
+    color: #aaa;
+}
+
+.results-section {
+    display: none;
+    margin-top: 40px;
+}
+
+.enhanced-thumbnails-section {
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+body.dark-theme .enhanced-thumbnails-section {
+    border-color: #555;
+}
+
+.section-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+body.dark-theme .section-title {
+    color: #e0e0e0;
+}
+
+.section-title i {
+    margin-right: 8px;
+    color: #999;
+}
+
+body.dark-theme .section-title i {
+    color: #777;
+}
+
+.thumbnails-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 15px 0;
+    scrollbar-width: thin;
+}
+
+.thumbnails-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.thumbnails-container::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+body.dark-theme .thumbnails-container::-webkit-scrollbar-track {
+    background: #333;
+}
+
+.thumbnails-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+body.dark-theme .thumbnails-container::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+body.dark-theme .thumbnail {
+    border-color: #555;
+}
+
+.thumbnail:hover,
+.thumbnail.selected {
+    border-color: #999;
+}
+
+body.dark-theme .thumbnail:hover,
+body.dark-theme .thumbnail.selected {
+    border-color: #777;
+}
+
+.comparison-container {
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+}
+
+body.dark-theme .comparison-container {
+    border-color: #555;
+}
+
+.image-comparison {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+body.dark-theme .image-comparison {
+    border-color: #555;
+}
+
+.comparison-images img {
+    width: 100%;
+    display: block;
+}
+
+.img-original {
+    position: relative;
+    z-index: 1;
+}
+
+.img-enhanced {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0 50% 0 0);
+    z-index: 2;
+}
+
+.slider-container {
+    margin-top: 20px;
+}
+
+.comparison-slider {
+    width: 100%;
+    height: 5px;
+    border-radius: 3px;
+    background: #ddd;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+body.dark-theme .comparison-slider {
+    background: #555;
+}
+
+.comparison-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #666;
+    cursor: pointer;
+}
+
+body.dark-theme .comparison-slider::-webkit-slider-thumb {
+    background: #aaa;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 1em;
+    color: #666;
+    font-weight: 300;
+}
+
+body.dark-theme .slider-labels {
+    color: #aaa;
+}
+
+.histogram-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+body.dark-theme .histogram-container {
+    border-color: #555;
+}
+
+#histChart {
+    max-width: 400px;
+    height: 200px !important;
+    margin: 0 auto;
+}
+
+.download-section {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+body.dark-theme .download-section {
+    border-color: #555;
+}
+
+.download-btn, .reset-btn {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+body.dark-theme .download-btn, 
+body.dark-theme .reset-btn {
+    background: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+.download-btn:hover, .reset-btn:hover {
+    background: #e0e0e0;
+}
+
+body.dark-theme .download-btn:hover, 
+body.dark-theme .reset-btn:hover {
+    background: #444;
+}
+
+.reset-btn {
+    background: #f5f5f5;
+}
+
+body.dark-theme .reset-btn {
+    background: #333;
+}
+
+.alert-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 350px;
+}
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    border: 1px solid transparent;
+}
+
+.alert-error {
+    background: #fee;
+    color: #c00;
+    border-color: #fcc;
+}
+
+.alert-success {
+    background: #efe;
+    color: #060;
+    border-color: #cfc;
+}
+
+body.dark-theme .alert-error {
+    background: #300;
+    color: #f99;
+    border-color: #600;
+}
+
+body.dark-theme .alert-success {
+    background: #030;
+    color: #9f9;
+    border-color: #060;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .main-card {
+        padding: 25px;
+    }
+
+    .method-buttons {
+        width: 100%;
+    }
+
+    .download-btn, .reset-btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .thumbnails-container {
+        justify-content: flex-start;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+    }
+}
+/* Arc Reactor Animation Styles (for loader during processing) */
+.loader {
+    display: none;
+    text-align: center;
+    padding: 50px;
+    position: relative; /* For layering the reactor */
+}
+
+.arc-reactor {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    animation: reactorPulse 2s ease-in-out infinite alternate; /* Overall subtle pulse */
+}
+
+.core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #00ffff; /* Cyan glow for reactor core */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff,
+        inset 0 0 10px rgba(0, 255, 255, 0.5); /* Inner glow */
+    animation: corePulse 1.5s ease-in-out infinite alternate; /* Pulsing core */
+}
+
+.ring {
+    position: absolute;
+    border: 2px solid rgba(0, 255, 255, 0.6); /* Semi-transparent cyan rings */
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ringRotate 3s linear infinite; /* Continuous rotation */
+}
+
+.ring-1 {
+    width: 60px;
+    height: 60px;
+    animation-direction: normal;
+}
+
+.ring-2 {
+    width: 80px;
+    height: 80px;
+    animation-direction: reverse;
+    animation-duration: 4s; /* Slower for depth */
+}
+
+.ring-3 {
+    width: 100px;
+    height: 100px;
+    opacity: 0.4;
+    animation-duration: 5s;
+}
+
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: glowExpand 2s ease-in-out infinite alternate;
+}
+
+.loader-text {
+    font-size: 1.2em;
+    color: #666;
+    font-weight: 400;
+}
+
+body.dark-theme .loader-text {
+    color: #aaa;
+}
+
+/* Keyframes for Animations */
+@keyframes corePulse {
+    0% {
+        box-shadow: 
+            0 0 10px #00ffff,
+            0 0 20px #00ffff,
+            0 0 30px #00ffff,
+            inset 0 0 10px rgba(0, 255, 255, 0.5);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        box-shadow: 
+            0 0 20px #00ffff,
+            0 0 40px #00ffff,
+            0 0 60px #00ffff,
+            inset 0 0 20px rgba(0, 255, 255, 0.8);
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+@keyframes ringRotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes glowExpand {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.1;
+    }
+}
+
+@keyframes reactorPulse {
+    0% {
+        filter: brightness(1);
+    }
+    100% {
+        filter: brightness(1.2);
+    }
+}
+/* Video Loader Styles */
+.arc-video {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%; /* Circular frame for reactor look */
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* Cyan glow around video */
+    display: block;
+}
+
+body.dark-theme .arc-video {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Brighter in dark mode */
+}
+
+/* Fallback CSS (hidden if video loads) */
+.arc-reactor-fallback {
+    display: none; /* Hide if video works */
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.arc-video[src=""] + .arc-reactor-fallback {
+    display: block; /* Show fallback if no src */
+}
+
+/* Reuse previous fallback styles (core, ring, glow, keyframes) - add if not already present */
+.core { /* ... previous core styles ... */ }
+/* ... (ring, glow, @keyframes as in my last message) ... */
+
+/* Rest of your existing CSS (upload-area, method-buttons, etc.) remains unchanged */
